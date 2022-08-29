@@ -9,12 +9,12 @@ export class FoodMenuController {
 
   @Post()
   create(@Body() createFoodMenuDto: CreateFoodMenuDto) {
-    return this.foodMenuService.create(createFoodMenuDto);
+    return this.foodMenuService.createMenuItem(createFoodMenuDto);
   }
 
   @Get()
   findAll() {
-    return this.foodMenuService.findAll();
+    return this.foodMenuService.getMenuItems();
   }
 
   @Get(':id')
