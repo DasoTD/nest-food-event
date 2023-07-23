@@ -14,7 +14,7 @@ export class NotificationsService {
     return `This action returns all notifications`;
   }
 
-  @OnEvent('new.meal')
+  @OnEvent('newMeal')
     async notifyUser (payload: NewMealEvent) {
         console.log(`Hello user, ${payload.name} has been added to our menu. Enjoy.`)
     }

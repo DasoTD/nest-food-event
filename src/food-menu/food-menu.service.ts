@@ -18,8 +18,9 @@ async createMenuItem (createFoodMenuDto: CreateFoodMenuDto): Promise<FoodMenu> {
   const {name, price} = createFoodMenuDto;
   const food = this.foodRepo.create({name, price})
   await this.foodRepo.save(food)
-  this.eventEmitter.emit('new.meal', 
-    new NewMealEvent(food.name)
+  const FOOD = JSON.stringify(createFoodMenuDto)
+  this.eventEmitter.emit('newMeal', 
+    new NewMealEvent(FOOD)
   ) //new
   return food
 }
